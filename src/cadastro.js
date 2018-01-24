@@ -1,4 +1,5 @@
 import React from 'react';
+import FontAwesome from 'react-fontawesome';
 import Button from 'muicss/lib/react/button';
 import Form from 'muicss/lib/react/form';
 import Input from 'muicss/lib/react/input';
@@ -33,7 +34,12 @@ export default class Cadastro extends React.Component {
 		return(
 			<div className="cadastroView">
 				<Form>
-			        <legend>Cadastro de Cliente</legend>
+			 		<legend> 
+			 			<a href={routes.Listar}>
+			 				<FontAwesome name='arrow-circle-left'/>
+			 			</a>
+			 			Cadastro de Cliente
+			 		</legend>
 			        <Input placeholder="Nome" value={this.state.name} onChange={this.handleChange}/>   
 				 	<Button onClick={this.handleSubmit} size="small" color="primary">Salvar</Button>
 		      	</Form>
