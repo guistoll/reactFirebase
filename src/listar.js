@@ -1,4 +1,5 @@
 import React from 'react';
+import FontAwesome from 'react-fontawesome';
 import { Link } from 'react-router-dom';
 import Button from 'muicss/lib/react/button';
 import './App.css';
@@ -33,6 +34,10 @@ export default class Listar extends React.Component {
 		const listClients = this.state.clients && this.state.clients.map((client, index) =>
 	  		<li key={index}>
 	  			{client.name}
+	  			<p>
+	  				<FontAwesome name='edit'/>
+	  				<FontAwesome name='trash-alt'/>
+	  			</p>
 	  		</li>
 	  	)
 
