@@ -31,17 +31,17 @@ body {
   border-radius: 50%;
   margin: 10px 15px 10px 0;
 }
-.cadastroView {
+.content {
   margin-top: 15px;
   background-color: white;
   padding: 10px;
 }
-.cadastroView > form > legend > a{
+.content > form > legend > a{
   color: black;
   margin-right: 15px;
   font-size: 28px;
 }
-.cadastroView > form > legend {
+.content > form > legend {
   font-size: 26px;
 }
 .content {
@@ -55,14 +55,18 @@ body {
   padding: 0;
 }
 .content > ul > li {
-  text-align: left;
   padding: 15px 0 15px 0;
   border-bottom: 1.3px solid #eee;
 }
-.content > ul > li > p {
-  float: right;
-  font-size: 16px;
+.divClient {
+  overflow: all;
+  display: inline;
 }
-.content > ul > li > p > span {
+.divIcons {
+  display: inline;
+  float: right;
+  font-size: 15px;
+}
+.divIcons > span {
   padding-left: 14px;
 }

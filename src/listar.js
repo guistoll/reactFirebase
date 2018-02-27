@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import FontAwesome from 'react-fontawesome';
 import { Link } from 'react-router-dom';
 import Button from 'muicss/lib/react/button';
@@ -10,7 +11,10 @@ export default class Listar extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			clients: []
+			clients: [{
+				name: '',
+				id: '',
+			}]
 		}
 	}
 
@@ -20,24 +24,41 @@ export default class Listar extends React.Component {
 
 	fetchClients(){
 		const ref = firebase.database().ref('/clients');
-
-    	ref.once('value', snap => {
+		
+    	ref.once('value', data => {
     		const clients = [];
-      		snap.forEach(function(client){
-      			clients.push(client.val());
-      		})
+    		
+      		
+      		data.forEach(function(client){
+      			clients.push({
+      				name: client.val(), 
+      				uid:client.key
+      			});
+      		});
+      		
       		this.setState({clients:clients});
     	});
+	}
+
+	delete(uid, index){
+		const ref = firebase.database().ref('/clients');
+
+		ref.child(uid).remove();
+		this.fetchClients();
 	}
 
 	render() {
 		const listClients = this.state.clients && this.state.clients.map((client, index) =>
 	  		<li key={index}>
-	  			{client.name}
-	  			<p>
-	  				<FontAwesome name='edit'/>
-	  				<FontAwesome name='trash-alt'/>
-	  			</p>
+	  			<div className="divClient">
+	  				{client.name.name}
+	  			</div>
+	  			<div className="divIcons">
+	  				<Link to={routes.Editar}>
+	  					<FontAwesome name='edit'/>
+	  				</Link>
+	  				<FontAwesome onClick={() => this.delete(client.uid, index)} name='trash-alt'/>
+	  			</div>
 	  		</li>
 	  	)
 

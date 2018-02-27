@@ -5,6 +5,7 @@ import * as routes from './routes';
 import Login from './login';
 import Cadastro from './cadastro';
 import Listar from './listar';
+import Editar from './editar';
 
 export default class App extends React.Component {
   render() {
@@ -14,6 +15,7 @@ export default class App extends React.Component {
 	      		<Route path='/' component={Login}/>
 	        	<Route path={routes.Listar} component={Listar} />
 	        	<Route path={routes.Cadastro} component={Cadastro} />
+	        	<Route path={routes.Editar} component={Editar} />
 	      	</div>
 	  	</Router>
     )

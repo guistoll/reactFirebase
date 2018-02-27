@@ -32,7 +32,7 @@ export default class Cadastro extends React.Component {
 
 	render() {
 		return(
-			<div className="cadastroView">
+			<div className="content">
 				<Form>
 			 		<legend> 
 			 			<a href={routes.Listar}>
