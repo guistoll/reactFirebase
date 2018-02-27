@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import FontAwesome from 'react-fontawesome';
 import { Link } from 'react-router-dom';
 import Button from 'muicss/lib/react/button';
