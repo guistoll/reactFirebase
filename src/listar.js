@@ -34,7 +34,13 @@ export default class Listar extends React.Component {
       				uid:client.key
       			});
       		});
-      		
+
+      		clients.sort(function(a, b){
+    			if(a.name.name < b.name.name) return -1;
+    			if(a.name.name > b.name.name) return 1;
+    			return 0;
+			});
+      			
       		this.setState({clients:clients});
     	});
 	}
