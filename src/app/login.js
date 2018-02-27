@@ -1,8 +1,8 @@
 import React from 'react';
-import './App.css';
-import {usersPermission} from './usersPermission';
-import { auth, provider } from './firebaseConfig';
-import UserAvatar from './userAvatar';
+import '../App.css';
+import {usersPermission} from '../firebase/usersPermission';
+import { auth, provider } from '../firebase/config';
+import UserAvatar from '../userAvatar';
 import * as routes from './routes';
 
 export default class Login extends React.Component {
@@ -60,13 +60,13 @@ export default class Login extends React.Component {
 						<div className="logout">
 							<UserAvatar imgSource={this.state.user.photoURL} />
 							<button onClick={this.logout}>Log Out</button>
-						</div>	
+						</div>
 					</div>
 
 				:
 
 					// WHEN USER IS NOT LOGGED IN:
-					<div className="login">
+					<div id="login" className="login">
 						<button className="btnLogin" onClick={this.login}>Log In</button>
 					</div>
 				}	

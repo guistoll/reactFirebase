@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
-import * as routes from './routes';
-import Login from './login';
-import Cadastro from './cadastro';
-import Listar from './listar';
-import Editar from './editar';
+import * as routes from './app/routes';
+import Login from './app/login';
+import Cadastro from './app/cadastro';
+import Listar from './app/listar';
+import Editar from './app/editar';
 
 export default class App extends React.Component {
   render() {

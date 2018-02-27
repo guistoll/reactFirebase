@@ -2,7 +2,7 @@ import React from 'react';
 import FontAwesome from 'react-fontawesome';
 import { Link } from 'react-router-dom';
 import Button from 'muicss/lib/react/button';
-import './App.css';
+import '../App.css';
 import firebase from 'firebase';
 import * as routes from './routes';
 
