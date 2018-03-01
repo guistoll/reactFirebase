@@ -13,9 +13,9 @@ export default class App extends React.Component {
     	<Router>
 	      	<div>
 	      		<Route path='/' component={Login}/>
-	        	<Route path={routes.Listar} component={Listar} />
-	        	<Route path={routes.Cadastro} component={Cadastro} />
-	        	<Route path={routes.Editar} component={Editar} />
+	        	<Route path={routes.Listar} component={Listar} name="listar" />
+	        	<Route path={routes.Cadastro} component={Cadastro} name="cadastro" />
+	        	<Route path={routes.Editar} component={Editar} name="editar"/>
 	      	</div>
 	  	</Router>
     )

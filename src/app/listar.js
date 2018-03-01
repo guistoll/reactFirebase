@@ -59,16 +59,16 @@ export default class Listar extends React.Component {
 	  				{client.name.name}
 	  			</div>
 	  			<div className="divIcons">
-	  				<Link to={routes.Editar}>
+	  				<Link to={'/Editar/' + client.uid} >
 	  					<FontAwesome name='edit'/>
 	  				</Link>
-	  				<FontAwesome onClick={() => this.delete(client.uid, index)} name='trash-alt'/>
+	  				<FontAwesome onClick={() => this.delete(client.uid, index)} name='trash-alt' />
 	  			</div>
 	  		</li>
 	  	)
-
+	  	
 		return(
-			<div className="content">
+			<div id="content" className="content">
 				<Link to={routes.Cadastro}>
 			 		<Button size="small" variant="fab" color="primary">+</Button>
 			 	</Link>
