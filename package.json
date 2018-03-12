@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "es6-promise": "^4.2.4",
     "firebase": "^4.8.2",
     "muicss": "^0.9.35",
     "react": "^16.2.0",

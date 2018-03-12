@@ -6,11 +6,11 @@ import Input from 'muicss/lib/react/input';
 import firebase from 'firebase';
 import '../App.css';
 import * as routes from './routes';
-import getClient from '../api/getClient.js';
+import { getClient, editClient } from '../api/functions';
 
 export default class Editar extends React.Component {
-	constructor(props) {
-		super(props);
+	constructor() {
+		super();
 		this.state = {
 			name: '',
 			id: '',
@@ -23,9 +23,9 @@ export default class Editar extends React.Component {
 	componentDidMount(){
 		const ref = firebase.database().ref('/clients');
 		const uid = this.props.match.params.uid;
-
-		getClient(ref, uid).then(function(client){
-			this.setState(client)
+		
+		getClient(ref, uid).then((client) => {
+			this.setState(client);
 		});
 	}
 
@@ -33,15 +33,9 @@ export default class Editar extends React.Component {
     	this.setState({name: event.target.value});
   	}
 
-  	editClient(){
-  		const uid = this.props.match.params.uid;
-  		firebase.database().ref('clients/' + uid).set({
-		    name: this.state.name
-	  	});
-  	}
-
   	handleSubmit(event) {
-    	this.editClient();
+    	editClient(this.props.match.params.uid, this.state.name);
+
 		this.props.history.push(routes.Listar);
     	event.preventDefault();
   	}
@@ -54,10 +48,10 @@ export default class Editar extends React.Component {
 			 			<a href={routes.Listar}>
 			 				<FontAwesome name='arrow-circle-left'/>
 			 			</a>
-			 			Editar Cliente
+			 			Edit Client
 			 		</legend>
-			        <Input placeholder="Nome" value={this.state.name} onChange={this.handleChange}/>   
-				 	<Button onClick={this.handleSubmit} size="small" color="primary">Salvar</Button>
+			        <Input placeholder="Name" value={this.state.name} onChange={this.handleChange}/>   
+				 	<Button onClick={this.handleSubmit} size="small" color="primary">Save</Button>
 		      	</Form>
 			</div>
 		);
