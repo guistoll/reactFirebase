@@ -16,7 +16,9 @@
 .env.test.local
 .env.production.local
 
-usersPermission.js
+.usersPermission.js
+src/*
+firebase/*
 
 npm-debug.log*
 yarn-debug.log*
